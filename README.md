@@ -3,6 +3,12 @@
 - Install vnm https://github.com/nvm-sh/nvm
 - Install version 20.12.2
 
+- Use NVM
+  
+  ```shell
+  nvm use
+  ```
+
 - Install pnpm
   
   ```shell

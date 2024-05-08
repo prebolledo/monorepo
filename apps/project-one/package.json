@@ -1,0 +1,21 @@
+{
+  "name": "@monorepo/project-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --watch src src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-node-dev": "^2.0.0"
+  },
+  "engines": {
+    "node": "20.12.2",
+    "pnpm": "9.1.0"
+  }  
+}
