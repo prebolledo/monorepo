@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "declaration": true,
-    "target": "ES5",
+    "target": "ES2022",
     "module": "CommonJS",
     "sourceMap": true,
     "resolveJsonModule": true,

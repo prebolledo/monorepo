@@ -228,7 +228,7 @@ In the workspace root
 - Install jest
 
   ```shell
-    pnpm add --filter [project-one] --save-dev jest ts-jest @types/jest @jest/globals
+  pnpm add --filter [project-one] --save-dev jest ts-jest @types/jest @jest/globals
   ```
 
 - Add presset in [project-one] to the package.json
@@ -244,6 +244,7 @@ In the workspace root
 
   ```json
     "types": [
-      "jest"
+      "jest",
+      "node"
     ]
   ```
