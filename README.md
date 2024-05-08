@@ -47,7 +47,7 @@
       "skipLibCheck": true,
       "moduleResolution": "node",
       "declaration": true,
-      "target": "ES5",
+      "target": "ES2022",
       "module": "CommonJS",
       "sourceMap": true    
     }
@@ -219,4 +219,31 @@ In the workspace root
 
   ```shell
   pnpm add --workspace --filter project-one @monorepo/lib-[name]
+  ```
+
+## Extrass
+
+### Jest
+
+- Install jest
+
+  ```shell
+    pnpm add --filter [project-one] --save-dev jest ts-jest @types/jest @jest/globals
+  ```
+
+- Add presset in [project-one] to the package.json
+
+  ```json
+    "jest": {
+      "preset": "ts-jest",
+      "testEnvironment": "node"
+    }, 
+  ```
+
+- Add types to tsconfig.json
+
+  ```json
+    "types": [
+      "jest"
+    ]
   ```
