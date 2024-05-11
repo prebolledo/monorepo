@@ -284,6 +284,12 @@ In the workspace root
   pnpm -r test 
   ````
 
+- Use parallel when the repo contains many projects
+
+  ```shell
+  pnpm --parallel -r test 
+  ````
+
 ### Debug
 
 - Add .vscode/launch.json
