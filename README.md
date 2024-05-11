@@ -278,7 +278,7 @@ In the workspace root
   pnpm --filter [project-name] test -- --coverage
   ```
 
-## Debug
+### Debug
 
 - Add .vscode/launch.json
 
