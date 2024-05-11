@@ -234,7 +234,16 @@ In the workspace root
 - Install jest
 
   ```shell
-  pnpm add --filter [project-one] --save-dev jest ts-jest @types/jest @jest/globals
+  pnpm add add --filter [project-name] --save-dev jest ts-jest @types/jest @jest/globals
+  ```
+
+- Add types to tsconfig.base.json
+
+  ```json
+    "types": [
+      "jest",
+      "node"
+    ]
   ```
 
 - Add presset in [project-one] to the package.json
@@ -246,11 +255,45 @@ In the workspace root
     }, 
   ```
 
-- Add types to tsconfig.json
+- Add test script to the project-one packahe.json
+  
+  ```json
+    "scripts": {
+      ...
+      "test": "jest"
+    }
+  ```  
+
+- Run specific test
+
+  ```shel
+  pnpm --filter [project-name] test -- -t 'describe[name] and it [name]'
+  ```
+
+  **Exmple** `pnpm --filter project-one test -- -t 'UseCase add user successfully'`
+
+- Run coverage
+
+  ```shell
+  pnpm --filter [project-name] test -- --coverage
+  ```
+
+## Debug
+
+- Add .vscode/launch.json
 
   ```json
-    "types": [
-      "jest",
-      "node"
+  {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "command": "nvm use && pnpm --filter [project-name] dev",
+        "name": "Debug project-one",
+        "cwd": "${workspaceFolder}",
+        "request": "launch",
+        "type": "node-terminal"
+      },    
     ]
+  }
   ```
+  
