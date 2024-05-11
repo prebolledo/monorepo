@@ -278,6 +278,12 @@ In the workspace root
   pnpm --filter [project-name] test -- --coverage
   ```
 
+- Run test for all projects
+
+  ```shell
+  pnpm -r test 
+  ````
+
 ### Debug
 
 - Add .vscode/launch.json
