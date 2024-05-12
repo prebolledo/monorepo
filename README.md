@@ -246,13 +246,10 @@ In the workspace root
     ]
   ```
 
-- Add presset in [project-one] to the package.json
+- Add presset in [project-one]
 
-  ```json
-    "jest": {
-      "preset": "ts-jest",
-      "testEnvironment": "node"
-    }, 
+  ```shell
+  cd apps/[project-name] && pnpm  ts-jest config:init && ../../
   ```
 
 - Add test script to the project-one packahe.json
