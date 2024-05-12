@@ -234,7 +234,7 @@ In the workspace root
 - Install jest
 
   ```shell
-  pnpm add add --filter [project-name] --save-dev jest ts-jest @types/jest @jest/globals
+  pnpm add --filter [project-name] --save-dev jest ts-jest @types/jest @jest/globals
   ```
 
 - Add types to tsconfig.base.json
