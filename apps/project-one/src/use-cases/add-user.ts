@@ -1,5 +1,5 @@
 import { UsersPort } from "../domain/ports/users";
-import { makeUser, User } from "../domain/user";
+import { makeUser, User } from "../domain/entities/user";
 
 export type AddUserUseCase = (user: User) => Promise<User>;
 

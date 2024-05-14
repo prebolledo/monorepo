@@ -4,9 +4,14 @@ export interface User {
   name: string,
 };
 
-export const makeUser = ({id, name, email}: User): User => {
+export const makeUser = ({
+  name,
+  email,
+}: {
+  name: string,
+  email: string
+}): User => {
   const user: User = {
-    id,
     email,
     name,
   };
