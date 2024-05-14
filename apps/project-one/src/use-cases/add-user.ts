@@ -3,10 +3,15 @@ import { makeUser, User } from "../domain/entities/user";
 
 export type AddUserUseCase = (user: User) => Promise<User>;
 
+export type AddUserUseCaseInput = {
+  email: string,
+  name: string,
+};
+
 export const makeAddUserUseCase = (
-  usersPort: UsersPort
+  usersPort: UsersPort,
 ): AddUserUseCase => {
-  return async ({email, name}: User): Promise<User> => {
+  return async ({email,name}: AddUserUseCaseInput): Promise<User> => {
     const user = makeUser({email, name});
     const id = await usersPort.add(user);
     user.id = id;
