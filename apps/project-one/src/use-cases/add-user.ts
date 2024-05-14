@@ -8,7 +8,7 @@ export const makeAddUserUseCase = (
 ): AddUserUseCase => {
   return async ({email, name}: User): Promise<User> => {
     const user = makeUser({email, name});
-    const id = await usersPort.addUser(user);
+    const id = await usersPort.add(user);
     user.id = id;
     return user;
   }
