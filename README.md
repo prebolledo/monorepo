@@ -50,10 +50,10 @@
   ```yaml
   packages:
     - 'apps/*'
-    - 'libs/*'
+    - 'libs/**'
   ```  
 
-## New Project
+## New Typescript Project
 
 - Create project
   
@@ -79,7 +79,7 @@
 - Add typescript
 
   ```shell
-  pnpm add -D typescript @types/node -w
+  pnpm add --filter project-one -D typescript @types/node
   ```  
 
 - Add index
@@ -190,7 +190,7 @@
 - Add Vite React Project
 
   ```shell
-  pnpm create vite apps/react-app --template react-ts 
+  pnpm create vite apps/react-app --template rreact-swc-ts
   ````
 
 - Install
@@ -210,8 +210,64 @@
   ```shell
   pnpm --filter react-app dev
   ````
+
+## New Vite React UI Lib
+
+  ```shell
+  pnpm create vite libs/ui/react --template react-swc-ts
+  ```
+
+  > Change name to @monorepo/lib-ui-react
+
+  > Remove all inecessary files, and export all components from index.ts
   
-## New Lib
+### Example src/index.ts
+
+  ```typescript
+  export * from "./Menu"
+  ```
+
+#### Menu Component
+
+  ```typescript
+  import './Menu.css'
+
+  export function Menu() {
+    return (
+      <>
+        <ul>
+          <li>Home</li>
+        </ul>
+      </>
+    )
+  }
+```
+
+#### Use
+
+- Add in project
+
+  ```shell
+  pnpm add --workspace --filter react-app @monorepo/lib-ui-react
+  ```
+
+- Import and use App.tsx
+
+  ```typescript
+    import { useState } from 'react'
+    import reactLogo from './assets/react.svg'
+    import viteLogo from '/vite.svg'
+    import './App.css'
+    import * as UI from "@monorepo/lib-ui-react";
+
+    function App() {
+      const [count, setCount] = useState(0)
+      return (
+        <>
+          <UI.Menu />
+  ```
+
+## New Typescript Lib
 
 - Add lib
 
@@ -244,9 +300,17 @@ In the workspace root
   pnpm --filter project-one build
   ```
 
+- Test project-one
+
+  ```shell
+  pnpm --filter project-one test
+  ```  
+
 ## Extras
 
-### [Jest](https://jestjs.io/)
+### [Jest](https://jestjs.io/) for Typescriopt projects and libs
+
+> For vite projects and libs use vites https://vitest.dev/
 
 - Install jest
 
