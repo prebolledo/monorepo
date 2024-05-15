@@ -33,42 +33,6 @@
   echo "v20.12.2" > .nvmrc
   ```
 
-- Add typescript
-
-  ```shell
-  pnpm add -D typescript @types/node -w
-  ```
-
-- Create tsconfig.base.json
-
-  ```json
-  {
-    "compilerOptions": {
-      "strict": true,
-      "strictNullChecks": true,
-      "esModuleInterop": true,
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "noUnusedLocals": true,
-      "skipLibCheck": true,
-      "moduleResolution": "node",
-      "declaration": true,
-      "target": "ES2022",
-      "module": "CommonJS",
-      "sourceMap": true    
-    }
-  }  
-  ```
-
-- Create tsconfig.json
-
-  ```json
-  {
-    "extends": "./tsconfig.base.json",
-    "include": ["src/**/*"]
-  }
-  ```
-
 - Create libs dir
 
   ```shell
@@ -111,6 +75,12 @@
   ```shell
   mkdir src
   ```
+
+- Add typescript
+
+  ```shell
+  pnpm add -D typescript @types/node -w
+  ```  
 
 - Add index
   
@@ -176,11 +146,34 @@
   }
   ```
 
+- Create tsconfig.base.json
+
+  ```json
+  {
+    "compilerOptions": {
+      "strict": true,
+      "strictNullChecks": true,
+      "esModuleInterop": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "noUnusedLocals": true,
+      "skipLibCheck": true,
+      "moduleResolution": "node",
+      "declaration": true,
+      "target": "ESNext",
+      "module": "CommonJS",
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "noEmit": false
+    }
+  }
+  ```
+
 - Create tsconfig.json
 
   ```json
   {
-    "extends": "../../tsconfig.base.json",
+    "extends": "./tsconfig.base.json",
     "include": ["src/**/*"],
     "exclude": [
       "node_modules"
