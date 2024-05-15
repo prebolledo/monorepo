@@ -352,6 +352,12 @@ In the workspace root
     }
   ```  
 
+- Run test
+
+  ```shell
+  pnpm --filter [project-name|lib-name] test
+  ```
+
 - Run specific test
 
   ```shel
