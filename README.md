@@ -1,6 +1,6 @@
 # MONOREPO
 
-- Install vnm https://github.com/nvm-sh/nvm
+- Install [NVM](https://github.com/nvm-sh/nvm)
 - Install version 20.12.2
 
 - Use NVM
@@ -9,7 +9,7 @@
   nvm use
   ```
 
-- Install pnpm
+- Install [PNPM](https://pnpm.io/)
   
   ```shell
   npm install -g pnpm@9.1.0
@@ -69,17 +69,13 @@
   }
   ```
 
-## Create Libs
-
-- Create libs
+- Create libs dir
 
   ```shell
   mkdir libs
   ````  
 
-## Create Apps
-
-- Create libs
+- Create apps dir
 
   ```shell
   mkdir apps
@@ -93,7 +89,7 @@
     - 'libs/*'
   ```  
 
-## Project
+## New Project
 
 - Create project
   
@@ -196,6 +192,49 @@
   }
   ```
 
+## New [VITE](https://vitejs.dev/guide/) Project
+
+- Add Vite React Project
+
+  ```shell
+  pnpm create vite apps/react-app --template react-ts 
+  ````
+
+- Install
+
+  ```shell
+  pnpm i --filter react-app
+  ````
+
+- Install
+
+  ```shell
+  pnpm i --filter react-app
+  ````
+
+- Dev
+
+  ```shell
+  pnpm --filter react-app dev
+  ````
+  
+## New Lib
+
+- Add lib
+
+  ```shell
+  mkdir libs/lib-test && cd libs/lib-test && pnpm init && ../../
+  ```
+
+  > Repeat steps "New Project"
+  > Use name @monorepo/lib-[name]
+  
+- Add lib to project
+
+  ```shell
+  pnpm add --workspace --filter project-one @monorepo/lib-[name]
+  ```
+
 ## Commands
 
 In the workspace root
@@ -212,24 +251,9 @@ In the workspace root
   pnpm --filter project-one build
   ```
 
-- Add lib
+## Extras
 
-  ```shell
-  mkdir libs/my-lib
-  ```
-
-  > Repeat steps to create app
-  > User name @monorepo/lib-[name]
-  
-- Add lib to project
-
-  ```shell
-  pnpm add --workspace --filter project-one @monorepo/lib-[name]
-  ```
-
-## Extrass
-
-### Jest
+### [Jest](https://jestjs.io/)
 
 - Install jest
 
@@ -246,13 +270,26 @@ In the workspace root
     ]
   ```
 
-- Add presset in [project-one]
+- Create jest config in [apps/project-name] or [libs/lib-name]
 
   ```shell
-  cd apps/[project-name] && pnpm  ts-jest config:init && ../../
+  cd [apps/project-name|libs/lib-name] \
+  && pnpm  ts-jest config:init \
+  && mkdir __tests__ && mkdir __mocks__  \
+  && ../../
   ```
 
-- Add test script to the project-one packahe.json
+- Add rest of the config > open jest.config.js and add
+
+  ```json
+    ...
+    testRegex: [".*\\.spec\\.ts$"],
+    collectCoverageFrom: ["src/**/*.ts", "!src/**/*.mock.ts"],
+    testPathIgnorePatterns: ["src/index.ts"],
+    coveragePathIgnorePatterns: ["src/index.ts"],
+  ```
+
+- Add test script to the packahe.json in [apps/project-name] or [libs/lib-name]
   
   ```json
     "scripts": {
@@ -264,15 +301,15 @@ In the workspace root
 - Run specific test
 
   ```shel
-  pnpm --filter [project-name] test -- -t 'describe[name] and it [name]'
+  pnpm --filter [project-name|lib-name] test -- -t 'describe[name] and it [name]'
   ```
 
-  **Exmple** `pnpm --filter project-one test -- -t 'UseCase add user successfully'`
+  **Example** `pnpm --filter project-one test -- -t 'UseCase add user successfully'`
 
 - Run coverage
 
   ```shell
-  pnpm --filter [project-name] test -- --coverage
+  pnpm --filter [project-name|lib-name] test -- --coverage
   ```
 
 - Run test for all projects
