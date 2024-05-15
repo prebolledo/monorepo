@@ -335,7 +335,7 @@ In the workspace root
 
 - Add rest of the config > open jest.config.js and add
 
-  ```json
+  ```javascript
     ...
     testRegex: [".*\\.spec\\.ts$"],
     collectCoverageFrom: ["src/**/*.ts", "!src/**/*.mock.ts"],
