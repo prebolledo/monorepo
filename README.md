@@ -140,7 +140,6 @@
       "pnpm": "9.1.0"
     },
     "dependencies": {
-      "@monorepo/lib-server": "workspace:^",
       "ts-node-dev": "^2.0.0"
     }
   }
@@ -164,7 +163,11 @@
       "module": "CommonJS",
       "sourceMap": true,
       "resolveJsonModule": true,
-      "noEmit": false
+      "noEmit": false,
+      "types": [
+        "jest",
+        "node"
+      ]      
     }
   }
   ```
