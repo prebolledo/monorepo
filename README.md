@@ -202,12 +202,6 @@
   pnpm i --filter react-app
   ````
 
-- Install
-
-  ```shell
-  pnpm i --filter react-app
-  ````
-
 - Dev
 
   ```shell
