@@ -404,7 +404,7 @@ In the workspace root
   }
   ```
 
-## husky
+## husky.
 
 pnpm add -D  husky lint-staged -w
 npx husky-init
