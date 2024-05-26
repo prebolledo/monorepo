@@ -407,4 +407,4 @@ In the workspace root
 ## husky
 
 pnpm add -D  husky lint-staged -w
-npx husky-init 
+npx husky-init
