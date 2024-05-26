@@ -64,7 +64,7 @@
 - Init project
 
   ```shell
-  cd apps/project-one && pnpm init
+  cd apps/project-one && pnpm init && cd ../../
   ```
 
 - Rename project-one name
@@ -91,7 +91,7 @@
 - Add ts-node-dev to local environment
   
   ```shell
-  pnpm add --filter project-one ts-node-dev 
+  pnpm add --filter project-one -D ts-node-dev 
   ```  
 
 - Define index as main: open `package.json`
@@ -109,7 +109,7 @@
     },
   ````
 
-- Add engines
+- Add engines in `package.json`
 
   ```json
     ...
@@ -139,9 +139,11 @@
       "node": "20.12.2",
       "pnpm": "9.1.0"
     },
-    "dependencies": {
+    "devDependencies": {
+      "@types/node": "^20.12.12",
+      "typescript": "^5.4.5",
       "ts-node-dev": "^2.0.0"
-    }
+    },
   }
   ```
 
@@ -165,7 +167,6 @@
       "resolveJsonModule": true,
       "noEmit": false,
       "types": [
-        "jest",
         "node"
       ]      
     }
@@ -402,4 +403,8 @@ In the workspace root
     ]
   }
   ```
-  
+
+## husky
+
+pnpm add -D  husky lint-staged -w
+npx husky-init 
