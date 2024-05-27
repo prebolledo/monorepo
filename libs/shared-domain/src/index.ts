@@ -1,0 +1,1 @@
+export { Email } from "./value-objects/Email";

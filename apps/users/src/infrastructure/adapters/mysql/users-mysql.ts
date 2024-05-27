@@ -1,8 +1,8 @@
 import { makeUser, User } from "../../../domain/entities/user";
 import { UsersPort } from "../../../domain/ports/users";
-import  { RowDataPacket, ResultSetHeader, createConnection } from "mysql2";
+import  { RowDataPacket, ResultSetHeader, createConnection, ConnectionOptions } from "mysql2";
 import { UserId } from "../../../domain/value-objects/UserId";
-import { ConnectionOptions } from "mysql2/typings/mysql/lib/Connection";
+import { Email } from "@monorepo/shared-domain";
 
 interface UserModel extends RowDataPacket {
   id?: string;
@@ -26,7 +26,7 @@ export const makeUsersMySQL = (): UsersPort => {
     const insert = new Promise((resolve, reject) => {
       conn.query<ResultSetHeader>(
         "insert into users(id, email, name) values(?,?,?)",
-        [user.id.get(), user.email, user.name],
+        [user.id.get(), user.email.get(), user.name],
         (err, res) => {
           if (err) {
             console.log(err);
@@ -61,7 +61,7 @@ export const makeUsersMySQL = (): UsersPort => {
     const rows: UserModel[] = await select;
     return rows.map((model) => makeUser({
       id: new UserId(model.id),
-      email: model.email ?? "",
+      email: new Email(model.email ?? ""),
       name: model.name ?? "",
     }));
   };
@@ -91,7 +91,7 @@ export const makeUsersMySQL = (): UsersPort => {
 
     return rows.map((model) => makeUser({
       id: new UserId(model.id),
-      email: model.email ?? "",
+      email: new Email(model.email ?? ""),
       name: model.name ?? "",
     }))[0];
   };  

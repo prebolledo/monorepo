@@ -1,3 +1,4 @@
+import { Email } from "@monorepo/shared-domain";
 import { makeUser } from "../domain/entities/user";
 import { UsersPort } from "../domain/ports/users";
 import { makeRegisterUserUseCase } from "./register";
@@ -17,7 +18,7 @@ describe("use case: register", () => {
   it("should create a new user", async () => {
     const user = makeUser({
       name: "Pablo",
-      email: "email@gmail.com",
+      email: new Email("email@gmail.com"),
     });
     const registerUserUseCase = makeRegisterUserUseCase({
       usersPort: usersPortMock,
@@ -32,7 +33,7 @@ describe("use case: register", () => {
     usersPortMock.register = jest.fn().mockImplementation(() => {
       throw new Error("error");
     });
-    const user = makeUser({ name: "Pablo", email: "email@gmail.com" });
+    const user = makeUser({ name: "Pablo", email: new Email("email@gmail.com") });
     const registerUserUseCase = makeRegisterUserUseCase({
       usersPort: usersPortMock,
     });

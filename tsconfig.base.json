@@ -7,13 +7,19 @@
     "experimentalDecorators": true,
     "noUnusedLocals": true,
     "skipLibCheck": true,
-    "moduleResolution": "node",
+    "skipDefaultLibCheck": true,
+    "moduleResolution": "Node",
     "declaration": true,
     "target": "ESNext",
-    "module": "commonjs",
-    "sourceMap": true,
+    "module": "CommonJS",
+    "sourceMap": false,
     "resolveJsonModule": true,
+    "allowJs": true,
     "noEmit": false,
-    "types": ["jest", "node"]
-  }
+    "allowSyntheticDefaultImports": true,
+    "types": ["jest", "node"],
+    "baseUrl": "."
+  },
+  "include": ["**/src/**/*.ts", "**/*.spec.ts"],
+  "exclude": ["**/node_modules", "node_modules"]
 }

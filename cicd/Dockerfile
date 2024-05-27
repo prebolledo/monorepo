@@ -26,3 +26,4 @@ WORKDIR /prod/$APP
 EXPOSE $PORT
 
 CMD [ "pnpm", "start" ]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]

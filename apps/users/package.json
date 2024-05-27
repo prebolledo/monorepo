@@ -4,9 +4,10 @@
   "description": "",
   "main": "src/index.ts",
   "type": "commonjs",
+  "private": true,
   "scripts": {
     "build": "tsc",
-    "start": "node dist/src/index.js",
+    "start": "node -r module-alias/register dist/src/index.js",
     "dev": "ts-node-dev --respawn --watch src src/index.ts",
     "lint": "eslint .",
     "test": "jest",
@@ -20,8 +21,13 @@
     "@types/uuid": "^9.0.8"
   },
   "dependencies": {
+    "@monorepo/shared-domain": "workspace:^",
     "express": "^4.19.2",
+    "module-alias": "^2.2.3",
     "mysql2": "^3.9.7",
     "uuid": "^9.0.1"
+  },
+  "_moduleAliases": {
+    "@monorepo/shared-domain": "node_modules/@monorepo/shared-domain/dist/src"
   }
 }

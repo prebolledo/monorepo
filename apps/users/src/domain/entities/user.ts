@@ -1,14 +1,15 @@
+import { Email } from "@monorepo/shared-domain";
 import { UserId } from "../value-objects/UserId";
 
 export interface User {
   id: UserId;
   name: string;
-  email: string;
+  email: Email;
 }
 
 export const makeUser = (
   { id, name, email }:
-  {id?: UserId, name: string, email: string},
+  {id?: UserId, name: string, email: Email},
 ): User => {
   let newId = id;
   if (!newId) {
@@ -17,7 +18,7 @@ export const makeUser = (
   const user: User = {
     id: newId,
     name,
-    email,
+    email: email,
   };
 
   return user;
