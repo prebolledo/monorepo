@@ -16,10 +16,6 @@ export default {
       lines: 10,
       statements: 10,
     },
-    "ts-jest": {
-      isolatedModules: true,
-      tsconfig: '../../tsconfig.json',
-    },
   },
   transform: {
     "^.+\\.ts$": "ts-jest"
