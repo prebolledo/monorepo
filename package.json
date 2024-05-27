@@ -37,8 +37,8 @@
   "dependencies": {},
   "lint-staged": {
     "*.ts": [
-      "pnpm lint:all",
-      "pnpm test:all"
+      "pnpm -r lint",
+      "pnpm -r test"
     ]
   }
 }
