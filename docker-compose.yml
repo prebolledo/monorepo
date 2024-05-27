@@ -1,0 +1,41 @@
+version: "3"
+
+networks:
+  corp-monorepo:
+    driver: bridge
+
+services:
+  users:
+    container_name: users
+    networks:
+      - corp-monorepo
+    restart: always
+    build:
+      context: .
+      dockerfile: cicd/Dockerfile
+      args:
+        - APP=users
+        - PORT=5000
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mydb
+  mydb:
+    image: mysql
+    container_name: mydb
+    networks:
+      - corp-monorepo    
+    restart: always
+    environment:
+      MYSQL_DATABASE: monorepo
+      MYSQL_ALLOW_EMPTY_PASSWORD: ok
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: monorepo
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - '3306:3306'
+    expose:
+      - "3306"      
+    volumes:
+      - ./local-resources/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
