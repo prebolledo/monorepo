@@ -5,8 +5,8 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "nvm use && pnpm --filter project-one dev",
-      "name": "Debug project-one",
+      "command": "nvm use && pnpm --filter users dev",
+      "name": "Debug users",
       "cwd": "${workspaceFolder}",
       "request": "launch",
       "type": "node-terminal"
