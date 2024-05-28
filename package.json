@@ -37,7 +37,7 @@
   "lint-staged": {
     "*.ts": [
       "pnpm -r lint",
-      "pnpm --recursive test"
+      "pnpm test users"
     ]
   },
   "dependencies": {

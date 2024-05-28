@@ -1,5 +1,5 @@
 describe("module", () => {
-  it("test", () => {
+  it("test.", () => {
     expect(true).toBeTruthy();
   });
 });
