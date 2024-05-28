@@ -12,12 +12,16 @@ export const makeServer = (): Server => {
   const server = (): void => {
 
     app.get("/", (req: Request, res: Response) => {
-      UseCases.register("test").then((cacheId: CacheId) => {
-        res.json({ cacheId });
-      }).catch((error: unknown) => {
-        res.send(error);
-      });
 
+      (async (): Promise<void> => {
+        const cacheId: CacheId = await UseCases.register("test");
+        res.json({
+          cacheId,
+        });
+
+      })().catch((error: unknown) => {
+        res.send(error);
+      });;
     });
 
     app.listen(port, () => {

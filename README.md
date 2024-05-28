@@ -408,3 +408,19 @@ In the workspace root
 
 pnpm add -D  husky lint-staged -w
 npx husky-init
+
+## Redis
+
+```shell
+pnpm add --filter cache -D @types/ioredis
+pnpm add --filter cache ioredis
+```
+
+```typescript
+import Redis from "ioredis";
+
+const redis = new Redis();
+
+await redis.set("key", JSON.stringify({ }), "EX", 3600);
+const data = await redis.get("key");
+```
