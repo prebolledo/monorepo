@@ -40,9 +40,6 @@
       "pnpm -r test"
     ]
   },
-  "_moduleAliases": {
-    "@monorepo/shared-domain": "node_modules/@monorepo/shared-domain/dist/src"
-  },
   "dependencies": {
     "module-alias": "^2.2.3"
   }
