@@ -1,0 +1,3 @@
+{
+  "*.ts": ["pnpm -r lint", "pnpm test users"]
+}

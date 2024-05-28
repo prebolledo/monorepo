@@ -1,3 +1,3 @@
 export const testLib = (): void => {
-  console.log("tets");
+  console.log("tets..");
 };
