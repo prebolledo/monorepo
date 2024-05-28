@@ -1,23 +1,18 @@
 import express, { Request, Response } from "express";
-import { CacheManagerPort } from "../../domain/ports/cache-manager";
-import { makeRegisterUseCase } from "../../use-cases/register";
 import { CacheId } from "../../domain/value-objects/CacheId";
+import { UseCases } from "../assambler";
 
 export type Server = () => void;
 
 const app: express.Application = express();
 const port = process.env.PORT ?? 5001;
 
-export const makeServer = (cacheManagerPort: CacheManagerPort): Server => {
+export const makeServer = (): Server => {
 
   const server = (): void => {
 
     app.get("/", (req: Request, res: Response) => {
-
-      const registerUseCase = makeRegisterUseCase({
-        cacheManagerPort,
-      });
-      registerUseCase("test").then((cacheId: CacheId) => {
+      UseCases.register("test").then((cacheId: CacheId) => {
         res.json({ cacheId });
       }).catch((error: unknown) => {
         res.send(error);
