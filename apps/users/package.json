@@ -21,13 +21,9 @@
     "@types/uuid": "^9.0.8"
   },
   "dependencies": {
-    "@monorepo/shared-domain": "workspace:^",
     "express": "^4.19.2",
     "module-alias": "^2.2.3",
     "mysql2": "^3.9.7",
     "uuid": "^9.0.1"
-  },
-  "_moduleAliases": {
-    "@monorepo/shared-domain": "node_modules/@monorepo/shared-domain/dist/src"
   }
 }

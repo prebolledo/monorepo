@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@monorepo/shared-domain':
+        specifier: workspace:^
+        version: link:libs/shared-domain
+      '@monorepo/test':
+        specifier: workspace:^
+        version: link:libs/test
       module-alias:
         specifier: ^2.2.3
         version: 2.2.3
@@ -51,9 +57,6 @@ importers:
 
   apps/users:
     dependencies:
-      '@monorepo/shared-domain':
-        specifier: workspace:^
-        version: link:../../libs/shared-domain
       express:
         specifier: ^4.19.2
         version: 4.19.2
@@ -75,6 +78,8 @@ importers:
         version: 9.0.8
 
   libs/shared-domain: {}
+
+  libs/test: {}
 
 packages:
 

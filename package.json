@@ -37,10 +37,13 @@
   "lint-staged": {
     "*.ts": [
       "pnpm -r lint",
-      "pnpm -r test"
+      "pnpm test users",
+      "pnpm --filter shared-modules test"
     ]
   },
   "dependencies": {
+    "@monorepo/shared-domain": "workspace:^",
+    "@monorepo/test": "workspace:^",
     "module-alias": "^2.2.3"
   }
 }
