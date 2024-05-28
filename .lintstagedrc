@@ -1,6 +1,7 @@
 {
   "*.ts": [
     "pnpm -r lint",
-    "pnpm test users"
+    "pnpm test users",
+    "pnpm test cache"
   ]
 }
