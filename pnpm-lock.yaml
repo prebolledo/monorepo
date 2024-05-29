@@ -14,9 +14,18 @@ importers:
       '@monorepo/test':
         specifier: workspace:^
         version: link:libs/test
+      express:
+        specifier: ^4.19.2
+        version: 4.19.2
       module-alias:
         specifier: ^2.2.3
         version: 2.2.3
+      mysql2:
+        specifier: ^3.9.7
+        version: 3.9.7
+      uuid:
+        specifier: ^9.0.1
+        version: 9.0.1
     devDependencies:
       '@eslint/js':
         specifier: ^9.3.0
@@ -24,12 +33,18 @@ importers:
       '@jest/globals':
         specifier: ^29.7.0
         version: 29.7.0
+      '@types/express':
+        specifier: ^4.17.21
+        version: 4.17.21
       '@types/jest':
         specifier: ^29.5.12
         version: 29.5.12
       '@types/node':
         specifier: ^20.12.12
         version: 20.12.12
+      '@types/uuid':
+        specifier: ^9.0.8
+        version: 9.0.8
       eslint:
         specifier: ^9.3.0
         version: 9.3.0
@@ -71,24 +86,7 @@ importers:
         specifier: ^9.0.8
         version: 9.0.8
 
-  apps/users:
-    dependencies:
-      express:
-        specifier: ^4.19.2
-        version: 4.19.2
-      mysql2:
-        specifier: ^3.9.7
-        version: 3.9.7
-      uuid:
-        specifier: ^9.0.1
-        version: 9.0.1
-    devDependencies:
-      '@types/express':
-        specifier: ^4.17.21
-        version: 4.17.21
-      '@types/uuid':
-        specifier: ^9.0.8
-        version: 9.0.8
+  apps/users: {}
 
   libs/shared-domain: {}
 

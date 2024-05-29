@@ -1,8 +1,8 @@
 // @ts-check
-import eslint from "@eslint/js";
-import tseslint from "typescript-eslint";
+const eslint = require("@eslint/js");
+const tseslint = require("typescript-eslint");
 
-export default tseslint.config(
+module.exports = tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
@@ -15,7 +15,7 @@ export default tseslint.config(
         project: [
           "**/tsconfig.json",
         ],
-        tsconfigRootDir: import.meta.dirname,
+        tsconfigRootDir: __dirname,
         sourceType: "module",
         ecmaVersion: "latest",
       },

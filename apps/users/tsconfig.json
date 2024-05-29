@@ -3,7 +3,7 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "dist"
+    "rootDir": "src/",
+    "outDir": "../../dist/apps/users",
   }
 }
