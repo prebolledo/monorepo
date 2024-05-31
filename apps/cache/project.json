@@ -1,0 +1,56 @@
+{
+  "name": "cache",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/cache/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/cache",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/cache/src/main.ts",
+        "tsConfig": "apps/cache/tsconfig.app.json",
+        "assets": ["apps/cache/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "cache:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "cache:build:development"
+        },
+        "production": {
+          "buildTarget": "cache:build:production"
+        }
+      }
+    }
+  }
+}

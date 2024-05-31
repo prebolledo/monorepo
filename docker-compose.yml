@@ -1,0 +1,29 @@
+version: "3"
+
+networks:
+  corp-nx:
+    driver: bridge
+services:
+  cache:
+    container_name: cache
+    networks:
+      - corp-nx
+    restart: always
+    build:
+      context: .
+      dockerfile: cicd/api/Dockerfile
+      args:
+        - APP=cache
+    environment:
+      - PORT=3000
+    ports:
+      - 5000:3000
+    depends_on:
+      - cache_redis
+  cache_redis:
+    image: redis:latest
+    container_name: cache_redis
+    networks:
+      - corp-nx
+    ports:
+      - 6379:6379            

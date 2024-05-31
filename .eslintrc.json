@@ -1,0 +1,82 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]     
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "parserOptions": {
+        "project": "./tsconfig.*?.json"
+      },
+      "rules": {
+        "@typescript-eslint/no-redundant-type-constituents": "error",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        //"no-console": "warn",
+        "keyword-spacing": "error",
+        "arrow-spacing": "error",
+        "array-bracket-newline": ["error", "consistent"],
+        "object-curly-spacing": ["error", "always", { "arraysInObjects": false }],
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "comma-dangle": ["error", "always-multiline"],
+        "space-before-function-paren": ["error", { "named": "never" }],
+        "semi": ["error", "always"],
+        "curly": ["error"],
+        "space-before-blocks": [
+          "error",
+          {
+            "functions": "always",
+            "keywords": "always",
+            "classes": "always"
+          }
+        ],
+        "brace-style": "error",
+        "block-spacing": "error",
+        "arrow-parens": ["error","always"],
+        "quotes": [
+          "error",
+          "double",
+          { "allowTemplateLiterals": true }
+        ],
+        "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+        "space-infix-ops": "error",
+        "@typescript-eslint/explicit-function-return-type": "error",      
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/no-inferrable-types": 0,
+        "@typescript-eslint/typedef": ["error", {"variableDeclaration": false}]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
+    }
+  ]
+}

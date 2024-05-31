@@ -16,5 +16,6 @@
     "baseUrl": ".",
     "paths": {}
   },
+  "types": ["jest", "node"],
   "exclude": ["node_modules", "tmp"]
 }
