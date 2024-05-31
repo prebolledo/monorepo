@@ -1,0 +1,11 @@
+{
+  "eslint.workingDirectories": ["./apps", "./libs"],
+  "eslint.validate": ["javascript", "typescript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+  },
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+}
