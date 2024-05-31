@@ -1,4 +1,4 @@
 import { makeServer } from "./infrastructure/http/server";
 
-const server = makeServer();
+const server = makeServer()
 server()
