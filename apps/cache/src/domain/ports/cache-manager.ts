@@ -1,4 +1,4 @@
-import { Cache } from "../entities/cache";
+import { Cache } from '../entities/cache';
 
 export interface CacheManagerPort {
   register: (cache: Cache) => Promise<boolean>;

@@ -1,17 +1,17 @@
-import { CacheManagerPort } from "../../../domain/ports/cache-manager";
-import { Cache, makeCache } from "../../../domain/entities/cache";
-import Redis from "ioredis";
+import { CacheManagerPort } from '../../../domain/ports/cache-manager';
+import { Cache, makeCache } from '../../../domain/entities/cache';
+import Redis from 'ioredis';
 
 export const makeRedis = (): CacheManagerPort => {
-  const redis = new Redis(6379, "localhost", {});
+  const redis = new Redis(6379, 'localhost', {});
 
   const register = async (cache: Cache): Promise<boolean> => {
     const result = await redis.set(cache.id.get(), JSON.stringify({
       id: cache.id.get(),
       value: cache.value,
-    }), "EX", 3600);
+    }), 'EX', 3600);
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    return Promise.resolve("OK" === result);
+    return Promise.resolve('OK' === result);
   };
 
    

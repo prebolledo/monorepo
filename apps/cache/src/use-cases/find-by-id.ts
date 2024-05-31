@@ -1,5 +1,5 @@
-import { Cache } from "../domain/entities/cache";
-import { CacheManagerPort } from "../domain/ports/cache-manager";
+import { Cache } from '../domain/entities/cache';
+import { CacheManagerPort } from '../domain/ports/cache-manager';
 
 export type FindByIdUseCase = (id: string) => Promise<Cache | null>;
 

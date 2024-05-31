@@ -77,7 +77,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "pnpm run lint:all:fix"
+      "pnpm run lint:all:fix",
+      "pnpm run test:all"
     ]
   }
 }

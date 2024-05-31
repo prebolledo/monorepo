@@ -1,5 +1,5 @@
-import { CacheId } from "../value-objects/CacheId";
-import { v4 as uuidv4 } from "uuid";
+import { CacheId } from '../value-objects/CacheId';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface Cache {
   id: CacheId,

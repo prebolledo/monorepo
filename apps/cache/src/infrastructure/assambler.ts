@@ -1,6 +1,6 @@
-import { makeRedis } from "./adapters/redis/redis";
-import { makeRegisterUseCase } from "../use-cases/register";
-import { makeFindByIdUseCase } from "../use-cases/find-by-id";
+import { makeRedis } from './adapters/redis/redis';
+import { makeRegisterUseCase } from '../use-cases/register';
+import { makeFindByIdUseCase } from '../use-cases/find-by-id';
 
 export const Adapters = {
   cache: makeRedis(),

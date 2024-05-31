@@ -1,1 +1,1 @@
-export * from "./lib/pokemons";
+export * from './lib/pokemons';

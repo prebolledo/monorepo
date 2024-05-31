@@ -1,6 +1,6 @@
-import { Cache, makeCache } from "../domain/entities/cache";
-import { CacheManagerPort } from "../domain/ports/cache-manager";
-import { CacheId } from "../domain/value-objects/CacheId";
+import { Cache, makeCache } from '../domain/entities/cache';
+import { CacheManagerPort } from '../domain/ports/cache-manager';
+import { CacheId } from '../domain/value-objects/CacheId';
 
 export type RegisterUseCase = (value: string) => Promise<CacheId>;
 
@@ -19,7 +19,7 @@ export const makeRegisterUseCase = ({
       const result = await cacheManagerPort.register(cache);
       
       if (!result) {
-        throw new Error("error tryinng to register value into cache");
+        throw new Error('error tryinng to register value into cache');
       }
 
     } catch (error) {

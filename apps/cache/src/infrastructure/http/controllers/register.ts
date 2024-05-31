@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import { UseCases } from "../../assambler";
-import { CacheId } from "../../../domain/value-objects/CacheId";
+import { Request, Response } from 'express';
+import { UseCases } from '../../assambler';
+import { CacheId } from '../../../domain/value-objects/CacheId';
 
 export const registerController = (req: Request, res: Response): void => {
   (async (): Promise<void> => {

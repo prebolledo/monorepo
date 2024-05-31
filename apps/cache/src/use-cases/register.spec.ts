@@ -1,6 +1,6 @@
-import { CacheManagerPort } from "../domain/ports/cache-manager";
-import { CacheId } from "../domain/value-objects/CacheId";
-import { makeRegisterUseCase } from "./register";
+import { CacheManagerPort } from '../domain/ports/cache-manager';
+import { CacheId } from '../domain/value-objects/CacheId';
+import { makeRegisterUseCase } from './register';
 
 
 const cacheManagerPortMock: CacheManagerPort = {
@@ -8,14 +8,14 @@ const cacheManagerPortMock: CacheManagerPort = {
   findById: jest.fn().mockRejectedValue(Promise.resolve(null)),
 };
 
-describe("use case: register", () => {
+describe('use case: register', () => {
 
   beforeAll(() => {
     jest.clearAllMocks();
   });
 
-  it("should register new value into cache", async () => {
-    const value = "this value";
+  it('should register new value into cache', async () => {
+    const value = 'this value';
     const registerUseCase = makeRegisterUseCase({
       cacheManagerPort: cacheManagerPortMock,
     });
@@ -25,12 +25,12 @@ describe("use case: register", () => {
     expect(cacheId).toBeDefined();
   });
 
-  it("should throw an error trying to register new value into cache", async () => {
-    const error = new Error("error");
+  it('should throw an error trying to register new value into cache', async () => {
+    const error = new Error('error');
     cacheManagerPortMock.register = jest.fn().mockImplementation(() => {
       throw error;
     });
-    const value = "this value";
+    const value = 'this value';
     const registerUseCase = makeRegisterUseCase({
       cacheManagerPort: cacheManagerPortMock,
     });
