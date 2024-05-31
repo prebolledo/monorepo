@@ -3,7 +3,7 @@ import { Cache, makeCache } from '../../../domain/entities/cache';
 import Redis from 'ioredis';
 
 export const makeRedis = (): CacheManagerPort => {
-  const redis = new Redis(6379, 'localhost', {});
+  const redis = new Redis(6379, process.env.REDIS_HOST, {});
 
   const register = async (cache: Cache): Promise<boolean> => {
     const result = await redis.set(cache.id.get(), JSON.stringify({

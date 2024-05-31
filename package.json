@@ -8,7 +8,7 @@
     "lib": "sh -c 'pnpm exec nx g @nx/js:lib ${0} --directory=libs/'",
     "dev": "sh -c 'pnpm exec nx serve ${0}'",
     "show-web": "sh -c 'pnpm exec nx show project ${0} --web'",
-    "test:all": "pnpm exec nx run-many --target=test --all",
+    "test:all": "pnpm exec nx run-many --target=test --all --passWithNoTests",
     "test": "sh -c 'pnpm exec npx nx test ${0} --verbose'",
     "lint:all": "pnpm exec nx run-many --target=lint --all",
     "lint:all:fix": "pnpm exec nx run-many --target=lint --all --fix",
