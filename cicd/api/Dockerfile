@@ -15,7 +15,7 @@ COPY ../../*jest.config.ts ./
 COPY ../../*jest.preset.js ./
 COPY ../../*eslintrc.json ./
 COPY ../../apps/$APP ./apps/$APP
-COPY ../../libs/* ./libs/*
+COPY ../../libs ./libs
 
 RUN npm install -g pnpm@8.15.5
 RUN pnpm i --frozen-lockfile

@@ -5,7 +5,7 @@ networks:
     driver: bridge
 services:
   ms-cache:
-    container_name: cache
+    container_name: ms-cache
     networks:
       - corp-nx
     restart: always
@@ -19,8 +19,8 @@ services:
     ports:
       - 5000:3000
     depends_on:
-      - cache
-  cache:
+      - cache_redis
+  cache_redis:
     image: redis:latest
     container_name: cache_redis
     networks:

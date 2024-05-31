@@ -21,14 +21,15 @@
   },
   "private": true,
   "dependencies": {
-    "tslib": "^2.6.2",
     "axios": "^1.6.0",
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "ioredis": "^5.4.1",
+    "tslib": "^2.6.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.5",
     "@nx/esbuild": "19.1.1",
     "@nx/eslint": "19.1.1",
     "@nx/eslint-plugin": "19.1.1",
@@ -39,33 +40,36 @@
     "@nx/web": "19.1.1",
     "@nx/webpack": "19.1.1",
     "@nx/workspace": "19.1.1",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@svgr/webpack": "^8.0.1",
     "@swc-node/register": "~1.9.1",
+    "@swc/cli": "~0.3.12",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "~4.17.21",
+    "@types/ioredis": "^5.0.0",
     "@types/jest": "^29.4.0",
     "@types/node": "~18.16.9",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.3.0",
     "@typescript-eslint/parser": "^7.3.0",
+    "babel-jest": "^29.4.1",
     "esbuild": "^0.19.2",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "husky": "^8.0.0",
     "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
     "jest-environment-node": "^29.4.1",
+    "lint-staged": "^15.2.5",
     "nx": "19.1.1",
     "prettier": "^2.6.2",
-    "react-refresh": "^0.10.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.4.2",
-    "webpack-cli": "^5.1.4",
-    "@types/express": "~4.17.21",
-    "@types/ioredis": "^5.0.0",
-    "@types/uuid": "^9.0.8",
-    "@types/body-parser": "^1.19.5",
-    "husky": "^8.0.0",
-    "lint-staged": "^15.2.5"
+    "webpack-cli": "^5.1.4"
   },
   "engines": {
     "node": "20.12.2",
@@ -74,7 +78,6 @@
   "lint-staged": {
     "*.ts": [
       "pnpm run lint:all:fix"
-      
     ]
-  }  
+  }
 }
