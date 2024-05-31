@@ -18,7 +18,7 @@
 
 ## Run example
 
-First start docker with cache service
+First try `pnm build:all` and then start docker with cache service
 
 ```sh
 pnpm dc:s cache_redis
@@ -62,7 +62,7 @@ Almost all commands encapsulate a native NX command
 
 ### app
 
-Create new node application
+> Create new node application
 
 ```sh
 pnpm app new-app
@@ -85,7 +85,7 @@ Derived:
 ### lib
 
 ```sh
-pnpm app my-lib
+pnpm lib my-lib
 ```
 
 > ? Which unit test runner would you like to use? …
