@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "lint": "pnpm exec nx run-many --target=lint --all"
+    "lint": "pnpm exec nx run-many --target=lint --all",
+    "lint:fix": "pnpm exec nx run-many --target=lint --all --fix"
   },
   "private": true,
   "dependencies": {
@@ -59,6 +60,9 @@
     "pnpm": "8.15.5"
   },
   "lint-staged": {
-    "*.ts": "pnpm run lint"
+    "*.ts": [
+      "pnpm run lint:fix",
+      "pnpm run lint"
+    ]
   }  
 }
