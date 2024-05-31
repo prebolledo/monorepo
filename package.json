@@ -7,12 +7,14 @@
     "app": "sh -c 'pnpm exec nx g @nx/node:application ${0} --directory=apps/'",
     "lib": "sh -c 'pnpm exec nx g @nx/js:lib ${0} --directory=libs/'",
     "dev": "sh -c 'pnpm exec nx serve ${0}'",
+    "test:all": "pnpm exec nx run-many --target=test --all",
+    "test": "sh -c 'pnpm exec npx nx test ${0} --verbose'",
     "lint:all": "pnpm exec nx run-many --target=lint --all",
     "lint:all:fix": "pnpm exec nx run-many --target=lint --all --fix",
-    "lint": "sh -c 'pnpm exec nx lint ${0}'",
+    "lint": "sh -c 'pnpm exec npx nx lint ${0} --verbose'",
     "lint:fix": "sh -c 'pnpm exec nx lint ${0} --fix --verbose'",
     "build:all": "pnpm exec nx run-many --target=build --all",
-    "build": "sh -c 'pnpm exec nx build ${0}'",
+    "build": "sh -c 'pnpm exec nx build ${0} --verbose'",
     "dc:s": "sh -c 'docker compose up ${0}'",
     "dc": "sh -c 'docker compose up --build'"
   },
@@ -71,6 +73,7 @@
   "lint-staged": {
     "*.ts": [
       "pnpm run lint:all:fix"
+      
     ]
   }  
 }
