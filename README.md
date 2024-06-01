@@ -136,7 +136,7 @@ pnpm test:all
 
 ### test
 
-Run a sin app or lib
+Run a single app or lib testing
 
 ```sh
 pnpm test my-app or my-lib
