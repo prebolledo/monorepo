@@ -5,7 +5,7 @@ import { makeRegisterUseCase } from './register';
 
 const cacheManagerPortMock: CacheManagerPort = {
   register: jest.fn().mockReturnValue(Promise.resolve(true)),
-  findById: jest.fn().mockRejectedValue(Promise.resolve(null)),
+  findById: jest.fn().mockReturnValue(Promise.resolve(null)),
 };
 
 describe('use case: register', () => {
