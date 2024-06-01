@@ -18,7 +18,7 @@
 
 ## Run example
 
-First try `pnpm build:all` and then start docker with cache service
+First try `pnpm i && pnpm build:all` and then start docker with cache service
 
 ```sh
 pnpm dc:s cache_redis
